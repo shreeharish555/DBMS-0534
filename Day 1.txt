@@ -1,0 +1,43 @@
+
+mysql> create database classroom;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use classroom;
+Database changed
+mysql> create table classroom(classroomno int(10), classname varchar(20), subjectId int(30), subjectname varchar(40), studentname varchar(50), studentId int(60));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc classroom;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| classroomno | int(10)     | YES  |     | NULL    |       |
+| classname   | varchar(20) | YES  |     | NULL    |       |
+| subjectId   | int(30)     | YES  |     | NULL    |       |
+| subjectname | varchar(40) | YES  |     | NULL    |       |
+| studentname | varchar(50) | YES  |     | NULL    |       |
+| studentId   | int(60)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> drop table classroom;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc classroom;
+ERROR 1146 (42S02): Table 'classroom.classroom' doesn't exist
+mysql> use classroom;
+Database changed
+mysql> create table classroom(classroomId int(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc classroom;
++-------------+---------+------+-----+---------+-------+
+| Field       | Type    | Null | Key | Default | Extra |
++-------------+---------+------+-----+---------+-------+
+| classroomId | int(10) | YES  |     | NULL    |       |
++-------------+---------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> create table classroom(classroomname varchar(30));
+ERROR 1050 (42S01): Table 'classroom' already exists
+mysql>
