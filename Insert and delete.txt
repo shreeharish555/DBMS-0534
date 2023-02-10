@@ -1,0 +1,37 @@
+mysql> create database Hospital;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use Hospital;
+Database changed
+mysql> create table Patient(patientname varchar(20),admissiondate int(6),address varchar(30));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc Patient;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| patientname   | varchar(20) | YES  |     | NULL    |       |
+| admissiondate | int(6)      | YES  |     | NULL    |       |
+| address       | varchar(30) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into Patient value('Abi',12,'Anna nagar chennai');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> desc Patient;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| patientname   | varchar(20) | YES  |     | NULL    |       |
+| admissiondate | int(6)      | YES  |     | NULL    |       |
+| address       | varchar(30) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> select *from Patient;
++-------------+---------------+--------------------+
+| patientname | admissiondate | address            |
++-------------+---------------+--------------------+
+| Mani        |            12 | koyambedu          |
++-------------+---------------+--------------------+
